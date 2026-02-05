@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jesteś moją Walentynką!</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;600&display=swap");
+
+      :root {
+        --bg-1: #ffe4e6;
+        --bg-2: #fbcfe8;
+        --bg-3: #fde68a;
+        --ink: #3f1d2b;
+        --accent: #f43f5e;
+        --card: rgba(255, 255, 255, 0.9);
+        --shadow: 0 24px 80px rgba(190, 24, 93, 0.2);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        font-family: "Manrope", system-ui, sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(900px 700px at 15% 20%, var(--bg-2), transparent 55%),
+          radial-gradient(1000px 700px at 85% 10%, var(--bg-3), transparent 60%),
+          radial-gradient(900px 700px at 50% 90%, var(--bg-1), transparent 60%),
+          #fff7fb;
+      }
+
+      .wrap {
+        width: min(680px, 92vw);
+        text-align: center;
+        background: var(--card);
+        padding: 48px 36px;
+        border-radius: 36px;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+
+      h1 {
+        font-family: "Fraunces", serif;
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        margin: 0 0 12px;
+      }
+
+      p {
+        font-size: 1.1rem;
+        margin: 0 0 28px;
+        color: rgba(63, 29, 43, 0.75);
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 8px 18px;
+        border-radius: 999px;
+        background: rgba(244, 63, 94, 0.1);
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+
+      .gif {
+        width: min(240px, 65vw);
+        height: auto;
+        border-radius: 22px;
+        box-shadow: 0 16px 40px rgba(190, 24, 93, 0.22);
+        margin: 8px auto 22px;
+        display: block;
+      }
+
+      .hearts {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.5;
+      }
+
+      .heart {
+        position: absolute;
+        font-size: 1.8rem;
+        animation: drift 8s infinite ease-in-out;
+      }
+
+      .heart:nth-child(1) { top: 12%; left: 10%; animation-delay: 0s; }
+      .heart:nth-child(2) { top: 70%; left: 15%; animation-delay: 1s; }
+      .heart:nth-child(3) { top: 20%; left: 80%; animation-delay: 2s; }
+      .heart:nth-child(4) { top: 75%; left: 70%; animation-delay: 3s; }
+      .heart:nth-child(5) { top: 45%; left: 45%; animation-delay: 4s; }
+
+      .cta {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 28px;
+        border-radius: 999px;
+        background: linear-gradient(120deg, #fb7185, #f43f5e);
+        color: white;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 12px 28px rgba(244, 63, 94, 0.35);
+      }
+
+      @keyframes drift {
+        0% {
+          transform: translateY(0) translateX(0) scale(1);
+        }
+        50% {
+          transform: translateY(-20px) translateX(10px) scale(1.05);
+        }
+        100% {
+          transform: translateY(0) translateX(0) scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="hearts" aria-hidden="true">
+        <div class="heart">💖</div>
+        <div class="heart">💞</div>
+        <div class="heart">💘</div>
+        <div class="heart">💗</div>
+        <div class="heart">💓</div>
+      </div>
+      <div class="badge">Oficjalnie</div>
+      <img class="gif" src="38ffa4616c7e43522afa0d3569fb522b.gif" alt="Urocza animacja" />
+      <h1>No i cyk! Jesteś moją Walentynką!</h1>
+    </div>
+  </body>
+</html>
